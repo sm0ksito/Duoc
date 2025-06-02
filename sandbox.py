@@ -73,13 +73,36 @@ while True:
     elif option == '2':
         print("=== VER POKEMONES ===")
         #PokemonIndex
-        for pokemon in pokemon_index:
-            print(pokemon)
+        for x in range(len(pokemon_index)):
+            print(f"""-
+ID: {pokemon_index[x]["id"]}
+Pokemon: {pokemon_index[x]["name"]}
+Altura: {pokemon_index[x]["height"]}""")
         #PokemonIndex
     #Option2
     #Option3
     elif option == '3':
         print("=== ELIMINAR POKEMON ===")
+                #PokemonIndex
+        for x in range(len(pokemon_index)):
+            print(f"""-
+ID: {pokemon_index[x]["id"]}
+Pokemon: {pokemon_index[x]["name"]}""")
+        #PokemonIndex
+        pokemon_id = int(input("-Para salir, ingrese 0-\nIngrese ID: "))
+        if pokemon_id > 0:
+            exist = False
+            for x in (pokemon_index):
+                if pokemon_id == x["id"]:
+                    exist = True
+                    pokemon_index.remove(x)
+                    break
+            if exist:
+                print("Pokemon eliminado!")
+            else:
+                print("ID indicado no existe.")
+        else:
+            pass
     #Option3
     #Option0
     elif option == '0':
